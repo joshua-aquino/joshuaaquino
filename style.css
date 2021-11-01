@@ -96,9 +96,7 @@ main > .section-sel:first-child {
 }
 
 ol {
-  list-style-position: outside;
-  position: relative;
-  left: 1.2em;
+  list-style-position: inside;
 }
 
 hr {
