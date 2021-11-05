@@ -609,11 +609,10 @@ p.text-center {
   color: var(--light);
   font-size: 0.7em;
   position: absolute;
-  bottom: 0;
-  height: 100%;
+  top: 0;
   width: 100%;
   background-color: rgba(0,0,0,0.6);
-  padding: 1em;
+  padding: 0.5em;
 }
 @media only screen and (min-width: 30rem) {
   .image-list {
