@@ -18,7 +18,7 @@
 }
 
 :root {
---primary: #df2020;
+--primary: #2f847c;
 --secondary: #f7b733;
 --success: ;
 --danger: ;
@@ -44,15 +44,15 @@
 
 html {
   box-sizing: border-box;
-  height: 100%;
+  height: 100vh;
   font-family: sans-serif;
   scroll-behavior: smooth;
+  background-image: url('./images/background.webp');
+  background-attachment: fixed;
+  background-size: 100vw auto;
 }
 
 body {
-  background-image: url('./images/background.webp');
-  background-attachment: fixed;
-  color: var(--dark);
   min-height: 100%;
   display: flex;
   flex-direction: column;
@@ -78,25 +78,44 @@ h1 {
 
 h2 {
   font-family: serif;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bolder;
   margin-top: 0;
-  color: var(--muted);
+}
+@media only screen and (min-width: 30rem) {
+  h2 {
+    font-size: 3rem;
+  }
 }
 
 h3 {
-  font-family: sans-serif;
-  color: var(--muted);
   font-weight: normal;
+  font-size: 1rem;
+}
+@media only screen and (min-width: 30rem) {
+  h3 {
+    font-size: 1.3rem;
+  }
 }
 
 main > section:first-child,
 main > .section-sel:first-child {
-  margin-top: 6rem;
+  margin-top: 4rem;
+}
+@media only screen and (min-width: 30rem) {
+  main > section:first-child,
+  main > .section-sel:first-child {
+    margin-top: 6rem;
+  }
+}
+
+ul {
+  padding: 0;
+  margin-left: 1em;
 }
 
 ol {
-  list-style-position: inside;
+  margin-left: 1.2em;
 }
 
 hr {
@@ -128,8 +147,9 @@ address {
 }
 
 a {
+  font-family: serif;
   cursor: pointer;
-  color: blue;
+  color: var(--primary);
 }
 
 img {
@@ -193,111 +213,130 @@ input[type=text] {
   height: inherit;
 }
 
-.padded h1, 
-.padded h2, 
-.padded h3, 
-.padded h4, 
-.padded h5,
-.padded ol,
-.padded address, 
-.padded p, 
-.padded small,
-.padded form {
-  padding: 0 var(--mb-padding);
-}
-.padded ul {
-  margin-left: var(--mb-padding);
-  margin-right: var(--mb-padding);
-}
-@media only screen and (min-width: 30rem) {
-  .padded h1, 
-  .padded h2, 
-  .padded h3, 
-  .padded h4, 
-  .padded h5,
-  .padded ol,
-  .padded address, 
-  .padded p, 
-  .padded small,
-  .padded form {
-    padding: 0;
+@media only screen and (max-width: 29.9rem) {
+  .padded > *:not(img, .image-list) {
+    padding: 0 var(--mb-padding);
   }
 }
 @media only screen and (min-width: 30rem) {
-  .padded ul {
-    margin-left: var(--tb-padding);
-    margin-right: var(--tb-padding);
-  }
-}
-
-.padded > p,
-.padded > small,
-.padded > address, 
-.padded > h1, 
-.padded > h2,
-.padded > h3, 
-.padded > h4,
-.padded > h5,
-.padded > ol,
-.padded > hgroup,
-.padded > div,
-.padded > span,
-.padded > img,
-.padded > form,
-.padded > button {
-}
-@media only screen and (min-width: 30rem) {
-  .padded > p,
-  .padded > small,
-  .padded > address, 
-  .padded > h1, 
-  .padded > h2,
-  .padded > h3, 
-  .padded > h4,
-  .padded > h5,
-  .padded > ol,
-  .padded > hgroup,
-  .padded > div,
-  .padded > span,
-  .padded > img,
-  .padded > form {
+  .padded > * {
     padding: 0 var(--tb-padding);
-  }
-  .padded > button {
-    margin-left: var(--tb-padding);
-    margin-right: var(--tb-padding);
   }
 }
 @media only screen and (min-width: 45rem) {
-  .padded > p,
-  .padded > small,
-  .padded > address, 
-  .padded > h1, 
-  .padded > h2,
-  .padded > h3, 
-  .padded > h4,
-  .padded > h5,
-  .padded > ol,
-  .padded > hgroup,
-  .padded > div,
-  .padded > span,
-  .padded > img,
-  .padded > form {
+  .padded > * {
     padding: 0 var(--dt-padding);
-  }
-  .padded > button {
-    margin-left: var(--dt-padding);
-    margin-right: var(--dt-padding);
   }
 }
 
+/*.padded {
+*  height: inherit;
+*}
+*
+*.padded h1, 
+*.padded h2, 
+*.padded h3, 
+*.padded h4, 
+*.padded h5,
+*.padded ul,
+*.padded ol,
+*.padded address, 
+*.padded p, 
+*.padded small,
+*.padded form {
+*  padding: 0 var(--mb-padding);
+*}
+*@media only screen and (min-width: 30rem) {
+*  .padded h1, 
+*  .padded h2, 
+*  .padded h3, 
+*  .padded h4, 
+*  .padded h5,
+*  .padded ul,
+*  .padded ol,
+*  .padded address, 
+*  .padded p, 
+*  .padded small,
+*  .padded form {
+*    padding: 0;
+*  }
+*}
+*
+*.padded > p,
+*.padded > small,
+*.padded > address, 
+*.padded > h1, 
+*.padded > h2,
+*.padded > h3, 
+*.padded > h4,
+*.padded > h5,
+*.padded > ul,
+*.padded > ol,
+*.padded > hgroup,
+*.padded > div,
+*.padded > span,
+*.padded > img,
+*.padded > form,
+*.padded > button {
+*}
+*@media only screen and (min-width: 30rem) {
+*  .padded > p,
+*  .padded > small,
+*  .padded > address, 
+*  .padded > h1, 
+*  .padded > h2,
+*  .padded > h3, 
+*  .padded > h4,
+*  .padded > h5,
+*  .padded > ul,
+*  .padded > ol,
+*  .padded > hgroup,
+*  .padded > div,
+*  .padded > span,
+*  .padded > img,
+*  .padded > form {
+*    padding: 0 var(--tb-padding);
+*  }
+*  .padded > button {
+*    margin-left: var(--tb-padding);
+*    margin-right: var(--tb-padding);
+*  }
+*}
+*@media only screen and (min-width: 45rem) {
+*  .padded > p,
+*  .padded > small,
+*  .padded > address, 
+*  .padded > h1, 
+*  .padded > h2,
+*  .padded > h3, 
+*  .padded > h4,
+*  .padded > h5,
+*  .padded > ul,
+*  .padded > ol,
+*  .padded > hgroup,
+*  .padded > div,
+*  .padded > span,
+*  .padded > img,
+*  .padded > form {
+*    padding: 0 var(--dt-padding);
+*  }
+*  .padded > button {
+*    margin-left: var(--dt-padding);
+*    margin-right: var(--dt-padding);
+*  }
+*}
+*/
+
 section {
-  border: solid;
-  border-width: 0.1rem;
-  border-color: silver;
-  padding: 3rem 0;
-  margin-bottom: 6rem;
+  padding: 2rem 0;
+  margin-bottom: 4rem;
   background-color: var(--white);
+}
+@media only screen and (min-width: 30rem) {
+  section {
+    padding: 3rem 0;
+    margin-bottom: 6rem;
+  }
 }
 
 nav {
@@ -560,20 +599,21 @@ p.text-center {
   text-decoration: none;
   position: relative;
   display: block;
-  flex: 0 1 calc(50% - calc(var(--mb-padding) / 4));
+  flex: 0 1 calc(50% - calc(var(--mb-padding) / 3.9));
 }
 
 .image-list span {
-  font-family: sans;
+  display: block;
+  font-family: sans-serif;
   font-weight: light;
   color: var(--light);
-  font-size: 1.4em;
+  font-size: 0.7em;
   position: absolute;
   bottom: 0;
+  height: 100%;
   width: 100%;
-  background-color: rgba(0,0,0,0.4);
-  text-align: right;
-  padding: 0.1em 0.2em 0.1em 0;
+  background-color: rgba(0,0,0,0.6);
+  padding: 1em;
 }
 @media only screen and (min-width: 30rem) {
   .image-list {
@@ -583,7 +623,7 @@ p.text-center {
   }
   .image-list a {
     display: block;
-    flex: 0 1 calc(50% - calc(var(--tb-padding) / 4));
+    flex: 0 1 calc(50% - calc(var(--tb-padding) / 3.9));
   }
 }
 @media only screen and (min-width: 45rem) {
@@ -593,6 +633,17 @@ p.text-center {
   .image-list a {
     flex: 0 1 calc(33% - calc(var(--dt-padding) / 5));
   }
+}
+
+.image-list i {
+  font-size: 2em;
+  text-align: center;
+  display: block;
+}
+
+.image-list p {
+  text-align: left;
+  line-height: 1em;
 }
 
 #piper {

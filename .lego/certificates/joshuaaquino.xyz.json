@@ -1,0 +1,5 @@
+{
+	"domain": "joshuaaquino.xyz",
+	"certUrl": "https://acme-v02.api.letsencrypt.org/acme/cert/04bc6b8ebd29ecb448094e47c2b9bbd75147",
+	"certStableUrl": "https://acme-v02.api.letsencrypt.org/acme/cert/04bc6b8ebd29ecb448094e47c2b9bbd75147"
+}
